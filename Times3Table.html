@@ -1,0 +1,3221 @@
+<html><!-- DW6 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<title>Savannah's Math</title>
+   <hta:application 
+   id="MyApp"
+   applicationName="Savannah Math"
+   caption="yes"
+   contextMenu="yes"
+   icon=""
+   maximizeButton="yes"
+   minimizeButton="yes"
+   navigable="yes"
+   scroll="yes"
+   scrollFlat="no"
+   selection="yes"
+   showInTaskBar="yes"
+   singleInstance="no"
+   sysMenu="yes"
+   version="1.0"
+   windowState="maximize"
+   
+ >
+ 
+<style type="text/css">
+
+ .welcome {
+  color: black;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 48;
+}
+
+ .celebrate {
+  color: Yellow;
+  z-index: 2;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 72;
+}
+
+ .celebrateg {
+  color: black;
+  z-index: 1;
+  font-weight: bold;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 72
+}
+
+ .sp {
+  color: blue;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 24;
+}
+
+.answer {
+  color: blue;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 22;
+}
+
+.answer2 {
+  color: blue;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 24;
+  border: 0;
+  background-color: #C9DAF8;
+}
+
+h1 {
+  color: blue;
+  font-family: "Calligraphy", cursive, sans-serif;
+  font-size: 36;
+}
+
+h2 {
+  color: Green;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 36;
+}
+
+h3 {
+	color: red;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 36;
+}
+
+h4 {
+	color: blue;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 24;
+}
+
+h5 {
+	color: green;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 24;
+}
+
+h6 {
+	color: red;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 24;
+}
+
+</style>
+
+<script language="javascript">
+
+	var top1 = 300;
+	var top1s = 295;
+	var left1 = 300;
+	var left1s = 295;
+
+	no1 = new Array(10, 5, 6, 1, 11, 3, 8, 0, 7, 9, 2, 4, 12);
+	ansno = new Array(30, 15, 18, 3, 33, 9, 24, 0, 21, 27, 6, 12, 36);
+	
+	function fonum1e() {
+			document.getElementById("num1b").focus();
+	}
+
+	function refreshPage(){
+		window.location.reload();
+	} 
+
+	function gonext2() {
+		var qno = (document.getElementById("questno").innerHTML) * 1;
+		var ans = (document.getElementById("num1b").value) * 1;
+		if(ans == ansno[qno]) {
+			document.getElementById("button1").style.display = "none";
+			document.getElementById("incorrect1").style.display = "none";
+			document.getElementById("wrong").style.display = "none";
+			document.getElementById("correct1").style.display = "block";
+			document.getElementById("buttonnx").style.display = "block";
+			document.getElementById("buttonnx").focus();
+		} else {
+			document.getElementById("wrong").innerHTML = "The answer is not " + ans + ", please try again."
+			document.getElementById("wrong").style.display = "block";
+			document.getElementById("incorrect1").style.display = "block";
+			document.getElementById("num1b").value = "";
+			fonum1e();
+		}
+	}
+	
+	function gonext2a() {
+		var qno = (document.getElementById("questno").innerHTML) * 1 + 1;
+		document.getElementById("button1").style.display = "block";
+		document.getElementById("incorrect1").style.display = "none";
+		document.getElementById("wrong").style.display = "none";
+		document.getElementById("correct1").style.display = "none";
+		document.getElementById("buttonnx").style.display = "none";
+		document.getElementById("num1").innerHTML = "Question Number " + (qno + 1);
+		document.getElementById("questno").innerHTML = qno;
+		document.getElementById("num1a").innerHTML = no1[qno];
+		document.getElementById("num1b").value = "";
+		if(qno == 12) {
+			document.getElementById("buttonnx").innerHTML = "Finish";
+		}
+		if(qno == 13) {
+			gowithit();
+		}
+		fonum1e();
+	}
+	
+	function gowithit() {
+		//document.getElementById("num1").style.display = "none";
+		//document.getElementById("prob1").style.display = "none";
+		//document.getElementById("prob2").style.display = "none";
+		//document.getElementById("prob3").style.display = "none";
+		//document.getElementById("prob4").style.display = "none";
+		//document.getElementById("prob5").style.display = "none";
+		//document.getElementById("prob6").style.display = "none";
+		//document.getElementById("button1").style.display = "none";
+		//document.getElementById("correct1").style.display = "none";
+		//document.getElementById("buttonnx").style.display = "none";
+		//document.getElementById("incorrect1").style.display = "none";
+		//document.getElementById("wrong").style.display = "none";
+		document.getElementById("everything").style.display = "none";
+		gowithit();
+	}
+	
+	function gowithit() {
+		document.getElementById("everything").style.display = "none";
+		//gof1();  //Fantastic
+		gox1()   //Excellent
+		//gog1();    //Good Going
+		//goa1();     //Way To Go
+	}
+	
+function gof1() {
+	W1interval = setInterval(W1Timer, 30);
+}
+
+	function W1Timer() {
+		document.getElementById("f1").style.display = "block";
+		document.getElementById("f1g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("f1").style.top = top1 + "px";
+		document.getElementById("f1").style.left = left1 + "px";
+		document.getElementById("f1g").style.top = top1s + "px";
+		document.getElementById("f1g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(W1interval);
+			gof1b();
+		}
+	}
+
+function gof1b() {
+	W1binterval = setInterval(W1bTimer, 30);
+}
+
+	function W1bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("f1").style.top = top1 + "px";
+		document.getElementById("f1").style.left = left1 + "px";
+		document.getElementById("f1g").style.top = top1s + "px";
+		document.getElementById("f1g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(W1binterval);
+			gof2();
+		}
+	}
+
+function gof2() {
+		top1 = 300;
+		left1 = 350;
+		top1s = 295;
+		left1s = 345;
+	W2interval = setInterval(W2Timer, 30);
+}
+
+	function W2Timer() {
+		document.getElementById("f2").style.display = "block";
+		document.getElementById("f2g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("f2").style.top = top1 + "px";
+		document.getElementById("f2").style.left = left1 + "px";
+		document.getElementById("f2g").style.top = top1s + "px";
+		document.getElementById("f2g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(W2interval);
+			gof2b();
+		}
+	}
+
+function gof2b() {
+	W2binterval = setInterval(W2bTimer, 30);
+}
+
+	function W2bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("f2").style.top = top1 + "px";
+		document.getElementById("f2").style.left = left1 + "px";
+		document.getElementById("f2g").style.top = top1s + "px";
+		document.getElementById("f2g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(W2binterval);
+			gof3();
+		}
+	}
+
+function gof3() {
+		top1 = 300;
+		left1 = 409;
+		top1s = 295;
+		left1s = 404;
+	W3interval = setInterval(W3Timer, 30);
+}
+
+	function W3Timer() {
+		document.getElementById("f3").style.display = "block";
+		document.getElementById("f3g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("f3").style.top = top1 + "px";
+		document.getElementById("f3").style.left = left1 + "px";
+		document.getElementById("f3g").style.top = top1s + "px";
+		document.getElementById("f3g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(W3interval);
+			gof3b();
+		}
+	}
+
+function gof3b() {
+	W3binterval = setInterval(W3bTimer, 30);
+}
+
+	function W3bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("f3").style.top = top1 + "px";
+		document.getElementById("f3").style.left = left1 + "px";
+		document.getElementById("f3g").style.top = top1s + "px";
+		document.getElementById("f3g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(W3binterval);
+			gof4();
+		}
+	}
+
+function gof4() {
+		top1 = 300;
+		left1 = 472;
+		top1s = 295;
+		left1s = 467;
+	W4interval = setInterval(W4Timer, 30);
+}
+
+	function W4Timer() {
+		document.getElementById("f4").style.display = "block";
+		document.getElementById("f4g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("f4").style.top = top1 + "px";
+		document.getElementById("f4").style.left = left1 + "px";
+		document.getElementById("f4g").style.top = top1s + "px";
+		document.getElementById("f4g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(W4interval);
+			gof4b();
+		}
+	}
+
+function gof4b() {
+	W4binterval = setInterval(W4bTimer, 30);
+}
+
+	function W4bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("f4").style.top = top1 + "px";
+		document.getElementById("f4").style.left = left1 + "px";
+		document.getElementById("f4g").style.top = top1s + "px";
+		document.getElementById("f4g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(W4binterval);
+			gof5();
+		}
+	}
+
+function gof5() {
+		top1 = 300;
+		left1 = 527;
+		top1s = 295;
+		left1s = 522;
+	W5interval = setInterval(W5Timer, 30);
+}
+
+	function W5Timer() {
+		document.getElementById("f5").style.display = "block";
+		document.getElementById("f5g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("f5").style.top = top1 + "px";
+		document.getElementById("f5").style.left = left1 + "px";
+		document.getElementById("f5g").style.top = top1s + "px";
+		document.getElementById("f5g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(W5interval);
+			gof5b();
+		}
+	}
+
+function gof5b() {
+	W5binterval = setInterval(W5bTimer, 30);
+}
+
+	function W5bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("f5").style.top = top1 + "px";
+		document.getElementById("f5").style.left = left1 + "px";
+		document.getElementById("f5g").style.top = top1s + "px";
+		document.getElementById("f5g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(W5binterval);
+			gof6();
+		}
+	}
+
+function gof6() {
+		top1 = 300;
+		left1 = 586;
+		top1s = 295;
+		left1s = 581;
+	W6interval = setInterval(W6Timer, 30);
+}
+
+	function W6Timer() {
+		document.getElementById("f6").style.display = "block";
+		document.getElementById("f6g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("f6").style.top = top1 + "px";
+		document.getElementById("f6").style.left = left1 + "px";
+		document.getElementById("f6g").style.top = top1s + "px";
+		document.getElementById("f6g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(W6interval);
+			gof6b();
+		}
+	}
+
+function gof6b() {
+	W6binterval = setInterval(W6bTimer, 30);
+}
+
+	function W6bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("f6").style.top = top1 + "px";
+		document.getElementById("f6").style.left = left1 + "px";
+		document.getElementById("f6g").style.top = top1s + "px";
+		document.getElementById("f6g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(W6binterval);
+			gof7();
+		}
+	}
+
+function gof7() {
+		top1 = 300;
+		left1 = 642;
+		top1s = 295;
+		left1s = 637;
+	W7interval = setInterval(W7Timer, 30);
+}
+
+	function W7Timer() {
+		document.getElementById("f7").style.display = "block";
+		document.getElementById("f7g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("f7").style.top = top1 + "px";
+		document.getElementById("f7").style.left = left1 + "px";
+		document.getElementById("f7g").style.top = top1s + "px";
+		document.getElementById("f7g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(W7interval);
+			gof7b();
+		}
+	}
+
+function gof7b() {
+	W7binterval = setInterval(W7bTimer, 30);
+}
+
+	function W7bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("f7").style.top = top1 + "px";
+		document.getElementById("f7").style.left = left1 + "px";
+		document.getElementById("f7g").style.top = top1s + "px";
+		document.getElementById("f7g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(W7binterval);
+			gof8();
+		}
+	}
+
+function gof8() {
+		top1 = 300;
+		left1 = 697;
+		top1s = 295;
+		left1s = 692;
+	W8interval = setInterval(W8Timer, 30);
+}
+
+	function W8Timer() {
+		document.getElementById("f8").style.display = "block";
+		document.getElementById("f8g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("f8").style.top = top1 + "px";
+		document.getElementById("f8").style.left = left1 + "px";
+		document.getElementById("f8g").style.top = top1s + "px";
+		document.getElementById("f8g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(W8interval);
+			gof8b();
+		}
+	}
+
+function gof8b() {
+	W8binterval = setInterval(W8bTimer, 30);
+}
+
+	function W8bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("f8").style.top = top1 + "px";
+		document.getElementById("f8").style.left = left1 + "px";
+		document.getElementById("f8g").style.top = top1s + "px";
+		document.getElementById("f8g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(W8binterval);
+			gof9();
+		}
+	}
+
+function gof9() {
+		top1 = 300;
+		left1 = 735;
+		top1s = 295;
+		left1s = 730;
+	W9interval = setInterval(W9Timer, 30);
+}
+
+	function W9Timer() {
+		document.getElementById("f9").style.display = "block";
+		document.getElementById("f9g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("f9").style.top = top1 + "px";
+		document.getElementById("f9").style.left = left1 + "px";
+		document.getElementById("f9g").style.top = top1s + "px";
+		document.getElementById("f9g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(W9interval);
+			gof9b();
+		}
+	}
+
+function gof9b() {
+	W9binterval = setInterval(W9bTimer, 30);
+}
+
+	function W9bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("f9").style.top = top1 + "px";
+		document.getElementById("f9").style.left = left1 + "px";
+		document.getElementById("f9g").style.top = top1s + "px";
+		document.getElementById("f9g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(W9binterval);
+			gos1();    //Goes to Savannah
+		}
+	}
+
+//Start of Excellent
+
+function gox1() {
+	X1interval = setInterval(X1Timer, 30);
+		//top1 = 300;
+		//left1 = 350;
+		//top1s = 295;
+		//left1s = 345;
+}
+
+	function X1Timer() {
+		document.getElementById("x1").style.display = "block";
+		document.getElementById("x1g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("x1").style.top = top1 + "px";
+		document.getElementById("x1").style.left = left1 + "px";
+		document.getElementById("x1g").style.top = top1s + "px";
+		document.getElementById("x1g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(X1interval);
+			gox1b();
+		}
+	}
+
+function gox1b() {
+	X1binterval = setInterval(X1bTimer, 30);
+}
+
+	function X1bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("x1").style.top = top1 + "px";
+		document.getElementById("x1").style.left = left1 + "px";
+		document.getElementById("x1g").style.top = top1s + "px";
+		document.getElementById("x1g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(X1binterval);
+			gox2();
+		}
+	}
+
+function gox2() {
+		top1 = 300;
+		left1 = 350;
+		top1s = 295;
+		left1s = 345;
+	X2interval = setInterval(X2Timer, 30);
+}
+
+	function X2Timer() {
+		document.getElementById("x2").style.display = "block";
+		document.getElementById("x2g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("x2").style.top = top1 + "px";
+		document.getElementById("x2").style.left = left1 + "px";
+		document.getElementById("x2g").style.top = top1s + "px";
+		document.getElementById("x2g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(X2interval);
+			gox2b();
+		}
+	}
+
+function gox2b() {
+	X2binterval = setInterval(X2bTimer, 30);
+}
+
+	function X2bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("x2").style.top = top1 + "px";
+		document.getElementById("x2").style.left = left1 + "px";
+		document.getElementById("x2g").style.top = top1s + "px";
+		document.getElementById("x2g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(X2binterval);
+			gox3();
+		}
+	}
+
+function gox3() {
+		top1 = 300;
+		left1 = 409;
+		top1s = 295;
+		left1s = 404;
+	X3interval = setInterval(X3Timer, 30);
+}
+
+	function X3Timer() {
+		document.getElementById("x3").style.display = "block";
+		document.getElementById("x3g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("x3").style.top = top1 + "px";
+		document.getElementById("x3").style.left = left1 + "px";
+		document.getElementById("x3g").style.top = top1s + "px";
+		document.getElementById("x3g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(X3interval);
+			gox3b();
+		}
+	}
+
+function gox3b() {
+	X3binterval = setInterval(X3bTimer, 30);
+}
+
+	function X3bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("x3").style.top = top1 + "px";
+		document.getElementById("x3").style.left = left1 + "px";
+		document.getElementById("x3g").style.top = top1s + "px";
+		document.getElementById("x3g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(X3binterval);
+			gox4();
+		}
+	}
+
+function gox4() {
+		top1 = 300;
+		left1 = 472;
+		top1s = 295;
+		left1s = 467;
+	X4interval = setInterval(X4Timer, 30);
+}
+
+	function X4Timer() {
+		document.getElementById("x4").style.display = "block";
+		document.getElementById("x4g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("x4").style.top = top1 + "px";
+		document.getElementById("x4").style.left = left1 + "px";
+		document.getElementById("x4g").style.top = top1s + "px";
+		document.getElementById("x4g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(X4interval);
+			gox4b();
+		}
+	}
+
+function gox4b() {
+	X4binterval = setInterval(X4bTimer, 30);
+}
+
+	function X4bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("x4").style.top = top1 + "px";
+		document.getElementById("x4").style.left = left1 + "px";
+		document.getElementById("x4g").style.top = top1s + "px";
+		document.getElementById("x4g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(X4binterval);
+			gox5();
+		}
+	}
+
+function gox5() {
+		top1 = 300;
+		left1 = 527;
+		top1s = 295;
+		left1s = 522;
+	X5interval = setInterval(X5Timer, 30);
+}
+
+	function X5Timer() {
+		document.getElementById("x5").style.display = "block";
+		document.getElementById("x5g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("x5").style.top = top1 + "px";
+		document.getElementById("x5").style.left = left1 + "px";
+		document.getElementById("x5g").style.top = top1s + "px";
+		document.getElementById("x5g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(X5interval);
+			gox5b();
+		}
+	}
+
+function gox5b() {
+	X5binterval = setInterval(X5bTimer, 30);
+}
+
+	function X5bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("x5").style.top = top1 + "px";
+		document.getElementById("x5").style.left = left1 + "px";
+		document.getElementById("x5g").style.top = top1s + "px";
+		document.getElementById("x5g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(X5binterval);
+			gox6();
+		}
+	}
+
+function gox6() {
+		top1 = 300;
+		left1 = 586;
+		top1s = 295;
+		left1s = 581;
+	X6interval = setInterval(X6Timer, 30);
+}
+
+	function X6Timer() {
+		document.getElementById("x6").style.display = "block";
+		document.getElementById("x6g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("x6").style.top = top1 + "px";
+		document.getElementById("x6").style.left = left1 + "px";
+		document.getElementById("x6g").style.top = top1s + "px";
+		document.getElementById("x6g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(X6interval);
+			gox6b();
+		}
+	}
+
+function gox6b() {
+	X6binterval = setInterval(X6bTimer, 30);
+}
+
+	function X6bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("x6").style.top = top1 + "px";
+		document.getElementById("x6").style.left = left1 + "px";
+		document.getElementById("x6g").style.top = top1s + "px";
+		document.getElementById("x6g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(X6binterval);
+			gox7();
+		}
+	}
+
+function gox7() {
+		top1 = 300;
+		left1 = 642;
+		top1s = 295;
+		left1s = 637;
+	X7interval = setInterval(X7Timer, 30);
+}
+
+	function X7Timer() {
+		document.getElementById("x7").style.display = "block";
+		document.getElementById("x7g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("x7").style.top = top1 + "px";
+		document.getElementById("x7").style.left = left1 + "px";
+		document.getElementById("x7g").style.top = top1s + "px";
+		document.getElementById("x7g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(X7interval);
+			gox7b();
+		}
+	}
+
+function gox7b() {
+	X7binterval = setInterval(X7bTimer, 30);
+}
+
+	function X7bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("x7").style.top = top1 + "px";
+		document.getElementById("x7").style.left = left1 + "px";
+		document.getElementById("x7g").style.top = top1s + "px";
+		document.getElementById("x7g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(X7binterval);
+			gox8();
+		}
+	}
+
+function gox8() {
+		top1 = 300;
+		left1 = 697;
+		top1s = 295;
+		left1s = 692;
+	X8interval = setInterval(X8Timer, 30);
+}
+
+	function X8Timer() {
+		document.getElementById("x8").style.display = "block";
+		document.getElementById("x8g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("x8").style.top = top1 + "px";
+		document.getElementById("x8").style.left = left1 + "px";
+		document.getElementById("x8g").style.top = top1s + "px";
+		document.getElementById("x8g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(X8interval);
+			gox8b();
+		}
+	}
+
+function gox8b() {
+	X8binterval = setInterval(X8bTimer, 30);
+}
+
+	function X8bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("x8").style.top = top1 + "px";
+		document.getElementById("x8").style.left = left1 + "px";
+		document.getElementById("x8g").style.top = top1s + "px";
+		document.getElementById("x8g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(X8binterval);
+			gox9();
+		}
+	}
+
+function gox9() {
+		top1 = 300;
+		left1 = 765;
+		top1s = 295;
+		left1s = 760;
+	X9interval = setInterval(X9Timer, 30);
+}
+
+	function X9Timer() {
+		document.getElementById("x9").style.display = "block";
+		document.getElementById("x9g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("x9").style.top = top1 + "px";
+		document.getElementById("x9").style.left = left1 + "px";
+		document.getElementById("x9g").style.top = top1s + "px";
+		document.getElementById("x9g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(X9interval);
+			gox9b();
+		}
+	}
+
+function gox9b() {
+	X9binterval = setInterval(X9bTimer, 30);
+}
+
+	function X9bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("x9").style.top = top1 + "px";
+		document.getElementById("x9").style.left = left1 + "px";
+		document.getElementById("x9g").style.top = top1s + "px";
+		document.getElementById("x9g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(X9binterval);
+			gos1();    //Goes to Savannah
+		}
+	}
+
+
+//Start of Way To Go
+
+function goa1() {
+		top1 = 300;
+		left1 = 300;
+		top1s = 295;
+		left1s = 295;
+	A1interval = setInterval(A1Timer, 30);
+}
+
+	function A1Timer() {
+		document.getElementById("a1").style.display = "block";
+		document.getElementById("a1g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("a1").style.top = top1 + "px";
+		document.getElementById("a1").style.left = left1 + "px";
+		document.getElementById("a1g").style.top = top1s + "px";
+		document.getElementById("a1g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(A1interval);
+			goa1b();
+		}
+	}
+
+function goa1b() {
+	A1binterval = setInterval(A1bTimer, 30);
+}
+
+	function A1bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("a1").style.top = top1 + "px";
+		document.getElementById("a1").style.left = left1 + "px";
+		document.getElementById("a1g").style.top = top1s + "px";
+		document.getElementById("a1g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(A1binterval);
+			goa2();
+		}
+	}
+
+function goa2() {
+		top1 = 300;
+		left1 = 381;
+		top1s = 295;
+		left1s = 376;
+	A2interval = setInterval(A2Timer, 30);
+}
+
+	function A2Timer() {
+		document.getElementById("a2").style.display = "block";
+		document.getElementById("a2g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("a2").style.top = top1 + "px";
+		document.getElementById("a2").style.left = left1 + "px";
+		document.getElementById("a2g").style.top = top1s + "px";
+		document.getElementById("a2g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(A2interval);
+			goa2b();
+		}
+	}
+
+function goa2b() {
+	A2binterval = setInterval(A2bTimer, 30);
+}
+
+	function A2bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("a2").style.top = top1 + "px";
+		document.getElementById("a2").style.left = left1 + "px";
+		document.getElementById("a2g").style.top = top1s + "px";
+		document.getElementById("a2g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(A2binterval);
+			goa3();
+		}
+	}
+
+function goa3() {
+		top1 = 300;
+		left1 = 440;
+		top1s = 295;
+		left1s = 435;
+	A3interval = setInterval(A3Timer, 30);
+}
+
+	function A3Timer() {
+		document.getElementById("a3").style.display = "block";
+		document.getElementById("a3g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("a3").style.top = top1 + "px";
+		document.getElementById("a3").style.left = left1 + "px";
+		document.getElementById("a3g").style.top = top1s + "px";
+		document.getElementById("a3g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(A3interval);
+			goa3b();
+		}
+	}
+
+function goa3b() {
+	A3binterval = setInterval(A3bTimer, 30);
+}
+
+	function A3bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("a3").style.top = top1 + "px";
+		document.getElementById("a3").style.left = left1 + "px";
+		document.getElementById("a3g").style.top = top1s + "px";
+		document.getElementById("a3g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(A3binterval);
+			goa4();
+		}
+	}
+
+function goa4() {
+		top1 = 300;
+		left1 = 537;
+		top1s = 295;
+		left1s = 532;
+	A4interval = setInterval(A4Timer, 30);
+}
+
+	function A4Timer() {
+		document.getElementById("a4").style.display = "block";
+		document.getElementById("a4g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("a4").style.top = top1 + "px";
+		document.getElementById("a4").style.left = left1 + "px";
+		document.getElementById("a4g").style.top = top1s + "px";
+		document.getElementById("a4g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(A4interval);
+			goa4b();
+		}
+	}
+
+function goa4b() {
+	A4binterval = setInterval(A4bTimer, 30);
+}
+
+	function A4bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("a4").style.top = top1 + "px";
+		document.getElementById("a4").style.left = left1 + "px";
+		document.getElementById("a4g").style.top = top1s + "px";
+		document.getElementById("a4g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(A4binterval);
+			goa5();
+		}
+	}
+
+function goa5() {
+		top1 = 300;
+		left1 = 592;
+		top1s = 295;
+		left1s = 587;
+	A5interval = setInterval(A5Timer, 30);
+}
+
+	function A5Timer() {
+		document.getElementById("a5").style.display = "block";
+		document.getElementById("a5g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("a5").style.top = top1 + "px";
+		document.getElementById("a5").style.left = left1 + "px";
+		document.getElementById("a5g").style.top = top1s + "px";
+		document.getElementById("a5g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(A5interval);
+			goa5b();
+		}
+	}
+
+function goa5b() {
+	A5binterval = setInterval(A5bTimer, 30);
+}
+
+	function A5bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("a5").style.top = top1 + "px";
+		document.getElementById("a5").style.left = left1 + "px";
+		document.getElementById("a5g").style.top = top1s + "px";
+		document.getElementById("a5g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(A5binterval);
+			goa6();
+		}
+	}
+
+function goa6() {
+		top1 = 300;
+		left1 = 700;
+		top1s = 295;
+		left1s = 695;
+	A6interval = setInterval(A6Timer, 30);
+}
+
+	function A6Timer() {
+		document.getElementById("a6").style.display = "block";
+		document.getElementById("a6g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("a6").style.top = top1 + "px";
+		document.getElementById("a6").style.left = left1 + "px";
+		document.getElementById("a6g").style.top = top1s + "px";
+		document.getElementById("a6g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(A6interval);
+			goa6b();
+		}
+	}
+
+function goa6b() {
+	A6binterval = setInterval(A6bTimer, 30);
+}
+
+	function A6bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("a6").style.top = top1 + "px";
+		document.getElementById("a6").style.left = left1 + "px";
+		document.getElementById("a6g").style.top = top1s + "px";
+		document.getElementById("a6g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(A6binterval);
+			goa7();
+		}
+	}
+
+function goa7() {
+		top1 = 300;
+		left1 = 755;
+		top1s = 295;
+		left1s = 750;
+	A7interval = setInterval(A7Timer, 30);
+}
+
+	function A7Timer() {
+		document.getElementById("a7").style.display = "block";
+		document.getElementById("a7g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("a7").style.top = top1 + "px";
+		document.getElementById("a7").style.left = left1 + "px";
+		document.getElementById("a7g").style.top = top1s + "px";
+		document.getElementById("a7g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(A7interval);
+			goa7b();
+		}
+	}
+
+function goa7b() {
+	A7binterval = setInterval(A7bTimer, 30);
+}
+
+	function A7bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("a7").style.top = top1 + "px";
+		document.getElementById("a7").style.left = left1 + "px";
+		document.getElementById("a7g").style.top = top1s + "px";
+		document.getElementById("a7g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(A7binterval);
+			gos1();    //goes to Savannah
+		}
+	}
+
+//Start of Good Going
+
+function gog1() {
+		top1 = 300;
+		left1 = 250;
+		top1s = 295;
+		left1s = 245;
+	G1interval = setInterval(G1Timer, 30);
+}
+
+	function G1Timer() {
+		document.getElementById("g1").style.display = "block";
+		document.getElementById("g1g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("g1").style.top = top1 + "px";
+		document.getElementById("g1").style.left = left1 + "px";
+		document.getElementById("g1g").style.top = top1s + "px";
+		document.getElementById("g1g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(G1interval);
+			gog1b();
+		}
+	}
+
+function gog1b() {
+	G1binterval = setInterval(G1bTimer, 30);
+}
+
+	function G1bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("g1").style.top = top1 + "px";
+		document.getElementById("g1").style.left = left1 + "px";
+		document.getElementById("g1g").style.top = top1s + "px";
+		document.getElementById("g1g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(G1binterval);
+			gog2();
+		}
+	}
+
+function gog2() {
+		top1 = 300;
+		left1 = 305;
+		top1s = 295;
+		left1s = 300;
+	G2interval = setInterval(G2Timer, 30);
+}
+
+	function G2Timer() {
+		document.getElementById("g2").style.display = "block";
+		document.getElementById("g2g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("g2").style.top = top1 + "px";
+		document.getElementById("g2").style.left = left1 + "px";
+		document.getElementById("g2g").style.top = top1s + "px";
+		document.getElementById("g2g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(G2interval);
+			gog2b();
+		}
+	}
+
+function gog2b() {
+	G2binterval = setInterval(G2bTimer, 30);
+}
+
+	function G2bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("g2").style.top = top1 + "px";
+		document.getElementById("g2").style.left = left1 + "px";
+		document.getElementById("g2g").style.top = top1s + "px";
+		document.getElementById("g2g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(G2binterval);
+			gog3();
+		}
+	}
+
+function gog3() {
+		top1 = 300;
+		left1 = 368;
+		top1s = 295;
+		left1s = 363;
+	G3interval = setInterval(G3Timer, 30);
+}
+
+	function G3Timer() {
+		document.getElementById("g3").style.display = "block";
+		document.getElementById("g3g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("g3").style.top = top1 + "px";
+		document.getElementById("g3").style.left = left1 + "px";
+		document.getElementById("g3g").style.top = top1s + "px";
+		document.getElementById("g3g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(G3interval);
+			gog3b();
+		}
+	}
+
+function gog3b() {
+	G3binterval = setInterval(G3bTimer, 30);
+}
+
+	function G3bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("g3").style.top = top1 + "px";
+		document.getElementById("g3").style.left = left1 + "px";
+		document.getElementById("g3g").style.top = top1s + "px";
+		document.getElementById("g3g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(G3binterval);
+			gog4();
+		}
+	}
+
+function gog4() {
+		top1 = 300;
+		left1 = 431;
+		top1s = 295;
+		left1s = 426;
+	G4interval = setInterval(G4Timer, 30);
+}
+
+	function G4Timer() {
+		document.getElementById("g4").style.display = "block";
+		document.getElementById("g4g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("g4").style.top = top1 + "px";
+		document.getElementById("g4").style.left = left1 + "px";
+		document.getElementById("g4g").style.top = top1s + "px";
+		document.getElementById("g4g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(G4interval);
+			gog4b();
+		}
+	}
+
+function gog4b() {
+	G4binterval = setInterval(G4bTimer, 30);
+}
+
+	function G4bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("g4").style.top = top1 + "px";
+		document.getElementById("g4").style.left = left1 + "px";
+		document.getElementById("g4g").style.top = top1s + "px";
+		document.getElementById("g4g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(G4binterval);
+			gog5();
+		}
+	}
+
+function gog5() {
+		top1 = 300;
+		left1 = 539;
+		top1s = 295;
+		left1s = 534;
+	G5interval = setInterval(G5Timer, 30);
+}
+
+	function G5Timer() {
+		document.getElementById("g5").style.display = "block";
+		document.getElementById("g5g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("g5").style.top = top1 + "px";
+		document.getElementById("g5").style.left = left1 + "px";
+		document.getElementById("g5g").style.top = top1s + "px";
+		document.getElementById("g5g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(G5interval);
+			gog5b();
+		}
+	}
+
+function gog5b() {
+	G5binterval = setInterval(G5bTimer, 30);
+}
+
+	function G5bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("g5").style.top = top1 + "px";
+		document.getElementById("g5").style.left = left1 + "px";
+		document.getElementById("g5g").style.top = top1s + "px";
+		document.getElementById("g5g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(G5binterval);
+			gog6();
+		}
+	}
+
+function gog6() {
+		top1 = 300;
+		left1 = 594;
+		top1s = 295;
+		left1s = 589;
+	G6interval = setInterval(G6Timer, 30);
+}
+
+	function G6Timer() {
+		document.getElementById("g6").style.display = "block";
+		document.getElementById("g6g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("g6").style.top = top1 + "px";
+		document.getElementById("g6").style.left = left1 + "px";
+		document.getElementById("g6g").style.top = top1s + "px";
+		document.getElementById("g6g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(G6interval);
+			gog6b();
+		}
+	}
+
+function gog6b() {
+	G6binterval = setInterval(G6bTimer, 30);
+}
+
+	function G6bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("g6").style.top = top1 + "px";
+		document.getElementById("g6").style.left = left1 + "px";
+		document.getElementById("g6g").style.top = top1s + "px";
+		document.getElementById("g6g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(G6binterval);
+			gog7();
+		}
+	}
+
+function gog7() {
+		top1 = 300;
+		left1 = 657;
+		top1s = 295;
+		left1s = 652;
+	G7interval = setInterval(G7Timer, 30);
+}
+
+	function G7Timer() {
+		document.getElementById("g7").style.display = "block";
+		document.getElementById("g7g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("g7").style.top = top1 + "px";
+		document.getElementById("g7").style.left = left1 + "px";
+		document.getElementById("g7g").style.top = top1s + "px";
+		document.getElementById("g7g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(G7interval);
+			gog7b();
+		}
+	}
+
+function gog7b() {
+	G7binterval = setInterval(G7bTimer, 30);
+}
+
+	function G7bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("g7").style.top = top1 + "px";
+		document.getElementById("g7").style.left = left1 + "px";
+		document.getElementById("g7g").style.top = top1s + "px";
+		document.getElementById("g7g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(G7binterval);
+			gog8();
+		}
+	}
+
+function gog8() {
+		top1 = 300;
+		left1 = 702;
+		top1s = 295;
+		left1s = 697;
+	G8interval = setInterval(G8Timer, 30);
+}
+
+	function G8Timer() {
+		document.getElementById("g8").style.display = "block";
+		document.getElementById("g8g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("g8").style.top = top1 + "px";
+		document.getElementById("g8").style.left = left1 + "px";
+		document.getElementById("g8g").style.top = top1s + "px";
+		document.getElementById("g8g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(G8interval);
+			gog8b();
+		}
+	}
+
+function gog8b() {
+	G8binterval = setInterval(G8bTimer, 30);
+}
+
+	function G8bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("g8").style.top = top1 + "px";
+		document.getElementById("g8").style.left = left1 + "px";
+		document.getElementById("g8g").style.top = top1s + "px";
+		document.getElementById("g8g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(G8binterval);
+			gog9();
+		}
+	}
+
+function gog9() {
+		top1 = 300;
+		left1 = 765;
+		top1s = 295;
+		left1s = 760;
+	G9interval = setInterval(G9Timer, 30);
+}
+
+	function G9Timer() {
+		document.getElementById("g9").style.display = "block";
+		document.getElementById("g9g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("g9").style.top = top1 + "px";
+		document.getElementById("g9").style.left = left1 + "px";
+		document.getElementById("g9g").style.top = top1s + "px";
+		document.getElementById("g9g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(G9interval);
+			gog9b();
+		}
+	}
+
+function gog9b() {
+	G9binterval = setInterval(G9bTimer, 30);
+}
+
+	function G9bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("g9").style.top = top1 + "px";
+		document.getElementById("g9").style.left = left1 + "px";
+		document.getElementById("g9g").style.top = top1s + "px";
+		document.getElementById("g9g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 100) {
+			clearInterval(G9binterval);
+			gos1();      //goes to Savannah
+		}
+	}
+
+//Start of Savannah
+
+function gos1() {
+		top1 = 400;
+		left1 = 300;
+		top1s = 395;
+		left1s = 295;
+	S1interval = setInterval(S1Timer, 30);
+}
+
+	function S1Timer() {
+		document.getElementById("s1").style.display = "block";
+		document.getElementById("s1g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("s1").style.top = top1 + "px";
+		document.getElementById("s1").style.left = left1 + "px";
+		document.getElementById("s1g").style.top = top1s + "px";
+		document.getElementById("s1g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 300) {
+			clearInterval(S1interval);
+			gos1b();
+		}
+	}
+
+function gos1b() {
+	S1binterval = setInterval(S1bTimer, 30);
+}
+
+	function S1bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("s1").style.top = top1 + "px";
+		document.getElementById("s1").style.left = left1 + "px";
+		document.getElementById("s1g").style.top = top1s + "px";
+		document.getElementById("s1g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(S1binterval);
+			gos2();
+		}
+	}
+
+function gos2() {
+		top1 = 400;
+		left1 = 356;
+		top1s = 395;
+		left1s = 351;
+	S2interval = setInterval(S2Timer, 30);
+}
+
+	function S2Timer() {
+		document.getElementById("s2").style.display = "block";
+		document.getElementById("s2g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("s2").style.top = top1 + "px";
+		document.getElementById("s2").style.left = left1 + "px";
+		document.getElementById("s2g").style.top = top1s + "px";
+		document.getElementById("s2g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 300) {
+			clearInterval(S2interval);
+			gos2b();
+		}
+	}
+
+function gos2b() {
+	S2binterval = setInterval(S2bTimer, 30);
+}
+
+	function S2bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("s2").style.top = top1 + "px";
+		document.getElementById("s2").style.left = left1 + "px";
+		document.getElementById("s2g").style.top = top1s + "px";
+		document.getElementById("s2g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(S2binterval);
+			gos3();
+		}
+	}
+
+function gos3() {
+		top1 = 400;
+		left1 = 415;
+		top1s = 395;
+		left1s = 410;
+	S3interval = setInterval(S3Timer, 30);
+}
+
+	function S3Timer() {
+		document.getElementById("s3").style.display = "block";
+		document.getElementById("s3g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("s3").style.top = top1 + "px";
+		document.getElementById("s3").style.left = left1 + "px";
+		document.getElementById("s3g").style.top = top1s + "px";
+		document.getElementById("s3g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 300) {
+			clearInterval(S3interval);
+			gos3b();
+		}
+	}
+
+function gos3b() {
+	S3binterval = setInterval(S3bTimer, 30);
+}
+
+	function S3bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("s3").style.top = top1 + "px";
+		document.getElementById("s3").style.left = left1 + "px";
+		document.getElementById("s3g").style.top = top1s + "px";
+		document.getElementById("s3g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(S3binterval);
+			gos4();
+		}
+	}
+
+function gos4() {
+		top1 = 400;
+		left1 = 468;
+		top1s = 395;
+		left1s = 463;
+	S4interval = setInterval(S4Timer, 30);
+}
+
+	function S4Timer() {
+		document.getElementById("s4").style.display = "block";
+		document.getElementById("s4g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("s4").style.top = top1 + "px";
+		document.getElementById("s4").style.left = left1 + "px";
+		document.getElementById("s4g").style.top = top1s + "px";
+		document.getElementById("s4g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 300) {
+			clearInterval(S4interval);
+			gos4b();
+		}
+	}
+
+function gos4b() {
+	S4binterval = setInterval(S4bTimer, 30);
+}
+
+	function S4bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("s4").style.top = top1 + "px";
+		document.getElementById("s4").style.left = left1 + "px";
+		document.getElementById("s4g").style.top = top1s + "px";
+		document.getElementById("s4g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(S4binterval);
+			gos5();
+		}
+	}
+
+function gos5() {
+		top1 = 400;
+		left1 = 527;
+		top1s = 395;
+		left1s = 522;
+	S5interval = setInterval(S5Timer, 30);
+}
+
+	function S5Timer() {
+		document.getElementById("s5").style.display = "block";
+		document.getElementById("s5g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("s5").style.top = top1 + "px";
+		document.getElementById("s5").style.left = left1 + "px";
+		document.getElementById("s5g").style.top = top1s + "px";
+		document.getElementById("s5g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 300) {
+			clearInterval(S5interval);
+			gos5b();
+		}
+	}
+
+function gos5b() {
+	S5binterval = setInterval(S5bTimer, 30);
+}
+
+	function S5bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("s5").style.top = top1 + "px";
+		document.getElementById("s5").style.left = left1 + "px";
+		document.getElementById("s5g").style.top = top1s + "px";
+		document.getElementById("s5g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(S5binterval);
+			gos6();
+		}
+	}
+
+function gos6() {
+		top1 = 400;
+		left1 = 590;
+		top1s = 395;
+		left1s = 585;
+	S6interval = setInterval(S6Timer, 30);
+}
+
+	function S6Timer() {
+		document.getElementById("s6").style.display = "block";
+		document.getElementById("s6g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("s6").style.top = top1 + "px";
+		document.getElementById("s6").style.left = left1 + "px";
+		document.getElementById("s6g").style.top = top1s + "px";
+		document.getElementById("s6g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 300) {
+			clearInterval(S6interval);
+			gos6b();
+		}
+	}
+
+function gos6b() {
+	S6binterval = setInterval(S6bTimer, 30);
+}
+
+	function S6bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("s6").style.top = top1 + "px";
+		document.getElementById("s6").style.left = left1 + "px";
+		document.getElementById("s6g").style.top = top1s + "px";
+		document.getElementById("s6g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(S6binterval);
+			gos7();
+		}
+	}
+
+function gos7() {
+		top1 = 400;
+		left1 = 653;
+		top1s = 395;
+		left1s = 648;
+	S7interval = setInterval(S7Timer, 30);
+}
+
+	function S7Timer() {
+		document.getElementById("s7").style.display = "block";
+		document.getElementById("s7g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("s7").style.top = top1 + "px";
+		document.getElementById("s7").style.left = left1 + "px";
+		document.getElementById("s7g").style.top = top1s + "px";
+		document.getElementById("s7g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 300) {
+			clearInterval(S7interval);
+			gos7b();
+		}
+	}
+
+function gos7b() {
+	S7binterval = setInterval(S7bTimer, 30);
+}
+
+	function S7bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("s7").style.top = top1 + "px";
+		document.getElementById("s7").style.left = left1 + "px";
+		document.getElementById("s7g").style.top = top1s + "px";
+		document.getElementById("s7g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(S7binterval);
+			gos8();
+		}
+	}
+
+function gos8() {
+		top1 = 400;
+		left1 = 712;
+		top1s = 395;
+		left1s = 707;
+	S8interval = setInterval(S8Timer, 30);
+}
+
+	function S8Timer() {
+		document.getElementById("s8").style.display = "block";
+		document.getElementById("s8g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("s8").style.top = top1 + "px";
+		document.getElementById("s8").style.left = left1 + "px";
+		document.getElementById("s8g").style.top = top1s + "px";
+		document.getElementById("s8g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 300) {
+			clearInterval(S8interval);
+			gos8b();
+		}
+	}
+
+function gos8b() {
+	S8binterval = setInterval(S8bTimer, 30);
+}
+
+	function S8bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("s8").style.top = top1 + "px";
+		document.getElementById("s8").style.left = left1 + "px";
+		document.getElementById("s8g").style.top = top1s + "px";
+		document.getElementById("s8g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(S8binterval);
+			gov1();    //goes to Love You
+			//gos9();      //adding 's to savannah
+		}
+	}
+
+function gos9() {
+		top1 = 400;
+		left1 = 772;
+		top1s = 395;
+		left1s = 767;
+	S9interval = setInterval(S9Timer, 30);
+}
+
+	function S9Timer() {
+		document.getElementById("s9").style.display = "block";
+		document.getElementById("s9g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("s9").style.top = top1 + "px";
+		document.getElementById("s9").style.left = left1 + "px";
+		document.getElementById("s9g").style.top = top1s + "px";
+		document.getElementById("s9g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 300) {
+			clearInterval(S9interval);
+			gos9b();
+		}
+	}
+
+function gos9b() {
+	S9binterval = setInterval(S9bTimer, 30);
+}
+
+	function S9bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("s9").style.top = top1 + "px";
+		document.getElementById("s9").style.left = left1 + "px";
+		document.getElementById("s9g").style.top = top1s + "px";
+		document.getElementById("s9g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(S9binterval);
+			gos10();
+		}
+	}
+
+function gos10() {
+		top1 = 400;
+		left1 = 792;
+		top1s = 395;
+		left1s = 787;
+	S10interval = setInterval(S10Timer, 30);
+}
+
+	function S10Timer() {
+		document.getElementById("s10").style.display = "block";
+		document.getElementById("s10g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("s10").style.top = top1 + "px";
+		document.getElementById("s10").style.left = left1 + "px";
+		document.getElementById("s10g").style.top = top1s + "px";
+		document.getElementById("s10g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 300) {
+			clearInterval(S10interval);
+			gos10b();
+		}
+	}
+
+function gos10b() {
+	S10binterval = setInterval(S10bTimer, 30);
+}
+
+	function S10bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("s10").style.top = top1 + "px";
+		document.getElementById("s10").style.left = left1 + "px";
+		document.getElementById("s10g").style.top = top1s + "px";
+		document.getElementById("s10g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 200) {
+			clearInterval(S10binterval);
+			gop1();      //goes to Papa
+		}
+	}
+
+// Start of Love You
+	
+function gov1() {
+		top1 = 500;
+		left1 = 320;
+		top1s = 495;
+		left1s = 315;
+	V1interval = setInterval(V1Timer, 30);
+}
+
+	function V1Timer() {
+		document.getElementById("v1").style.display = "block";
+		document.getElementById("v1g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("v1").style.top = top1 + "px";
+		document.getElementById("v1").style.left = left1 + "px";
+		document.getElementById("v1g").style.top = top1s + "px";
+		document.getElementById("v1g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 400) {
+			clearInterval(V1interval);
+			gov1b();
+		}
+	}
+
+function gov1b() {
+	V1binterval = setInterval(V1bTimer, 30);
+}
+
+	function V1bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("v1").style.top = top1 + "px";
+		document.getElementById("v1").style.left = left1 + "px";
+		document.getElementById("v1g").style.top = top1s + "px";
+		document.getElementById("v1g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 300) {
+			clearInterval(V1binterval);
+			gov2();
+		}
+	}
+
+function gov2() {
+		top1 = 500;
+		left1 = 366;
+		top1s = 495;
+		left1s = 361;
+	V2interval = setInterval(V2Timer, 30);
+}
+
+	function V2Timer() {
+		document.getElementById("v2").style.display = "block";
+		document.getElementById("v2g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("v2").style.top = top1 + "px";
+		document.getElementById("v2").style.left = left1 + "px";
+		document.getElementById("v2g").style.top = top1s + "px";
+		document.getElementById("v2g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 400) {
+			clearInterval(V2interval);
+			gov2b();
+		}
+	}
+
+function gov2b() {
+	V2binterval = setInterval(V2bTimer, 30);
+}
+
+	function V2bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("v2").style.top = top1 + "px";
+		document.getElementById("v2").style.left = left1 + "px";
+		document.getElementById("v2g").style.top = top1s + "px";
+		document.getElementById("v2g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 300) {
+			clearInterval(V2binterval);
+			gov3();
+		}
+	}
+
+function gov3() {
+		top1 = 500;
+		left1 = 429;
+		top1s = 495;
+		left1s = 424;
+	V3interval = setInterval(V3Timer, 30);
+}
+
+	function V3Timer() {
+		document.getElementById("v3").style.display = "block";
+		document.getElementById("v3g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("v3").style.top = top1 + "px";
+		document.getElementById("v3").style.left = left1 + "px";
+		document.getElementById("v3g").style.top = top1s + "px";
+		document.getElementById("v3g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 400) {
+			clearInterval(V3interval);
+			gov3b();
+		}
+	}
+
+function gov3b() {
+	V3binterval = setInterval(V3bTimer, 30);
+}
+
+	function V3bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("v3").style.top = top1 + "px";
+		document.getElementById("v3").style.left = left1 + "px";
+		document.getElementById("v3g").style.top = top1s + "px";
+		document.getElementById("v3g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 300) {
+			clearInterval(V3binterval);
+			gov4();
+		}
+	}
+
+function gov4() {
+		top1 = 500;
+		left1 = 482;
+		top1s = 495;
+		left1s = 477;
+	V4interval = setInterval(V4Timer, 30);
+}
+
+	function V4Timer() {
+		document.getElementById("v4").style.display = "block";
+		document.getElementById("v4g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("v4").style.top = top1 + "px";
+		document.getElementById("v4").style.left = left1 + "px";
+		document.getElementById("v4g").style.top = top1s + "px";
+		document.getElementById("v4g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 400) {
+			clearInterval(V4interval);
+			gov4b();
+		}
+	}
+
+function gov4b() {
+	V4binterval = setInterval(V4bTimer, 30);
+}
+
+	function V4bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("v4").style.top = top1 + "px";
+		document.getElementById("v4").style.left = left1 + "px";
+		document.getElementById("v4g").style.top = top1s + "px";
+		document.getElementById("v4g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 300) {
+			clearInterval(V4binterval);
+			gov5();
+		}
+	}
+
+function gov5() {
+		top1 = 500;
+		left1 = 582;
+		top1s = 495;
+		left1s = 577;
+	V5interval = setInterval(V5Timer, 30);
+}
+
+	function V5Timer() {
+		document.getElementById("v5").style.display = "block";
+		document.getElementById("v5g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("v5").style.top = top1 + "px";
+		document.getElementById("v5").style.left = left1 + "px";
+		document.getElementById("v5g").style.top = top1s + "px";
+		document.getElementById("v5g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 400) {
+			clearInterval(V5interval);
+			gov5b();
+		}
+	}
+
+function gov5b() {
+	V5binterval = setInterval(V5bTimer, 30);
+}
+
+	function V5bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("v5").style.top = top1 + "px";
+		document.getElementById("v5").style.left = left1 + "px";
+		document.getElementById("v5g").style.top = top1s + "px";
+		document.getElementById("v5g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 300) {
+			clearInterval(V5binterval);
+			gov6();
+		}
+	}
+
+function gov6() {
+		top1 = 500;
+		left1 = 634;
+		top1s = 495;
+		left1s = 629;
+	V6interval = setInterval(V6Timer, 30);
+}
+
+	function V6Timer() {
+		document.getElementById("v6").style.display = "block";
+		document.getElementById("v6g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("v6").style.top = top1 + "px";
+		document.getElementById("v6").style.left = left1 + "px";
+		document.getElementById("v6g").style.top = top1s + "px";
+		document.getElementById("v6g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 400) {
+			clearInterval(V6interval);
+			gov6b();
+		}
+	}
+
+function gov6b() {
+	V6binterval = setInterval(V6bTimer, 30);
+}
+
+	function V6bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("v6").style.top = top1 + "px";
+		document.getElementById("v6").style.left = left1 + "px";
+		document.getElementById("v6g").style.top = top1s + "px";
+		document.getElementById("v6g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 300) {
+			clearInterval(V6binterval);
+			gov7();
+		}
+	}
+
+function gov7() {
+		top1 = 500;
+		left1 = 697;
+		top1s = 495;
+		left1s = 692;
+	V7interval = setInterval(V7Timer, 30);
+}
+
+	function V7Timer() {
+		document.getElementById("v7").style.display = "block";
+		document.getElementById("v7g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("v7").style.top = top1 + "px";
+		document.getElementById("v7").style.left = left1 + "px";
+		document.getElementById("v7g").style.top = top1s + "px";
+		document.getElementById("v7g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 400) {
+			clearInterval(V7interval);
+			gov7b();
+		}
+	}
+
+function gov7b() {
+	V7binterval = setInterval(V7bTimer, 30);
+}
+
+	function V7bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("v7").style.top = top1 + "px";
+		document.getElementById("v7").style.left = left1 + "px";
+		document.getElementById("v7g").style.top = top1s + "px";
+		document.getElementById("v7g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 300) {
+			clearInterval(V7binterval);
+			gop1();
+		}
+	}
+
+//Start of Papa
+
+function gop1() {
+		top1 = 600;
+		left1 = 430;
+		top1s = 595;
+		left1s = 425;
+	P1interval = setInterval(P1Timer, 30);
+}
+
+	function P1Timer() {
+		document.getElementById("p1").style.display = "block";
+		document.getElementById("p1g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("p1").style.top = top1 + "px";
+		document.getElementById("p1").style.left = left1 + "px";
+		document.getElementById("p1g").style.top = top1s + "px";
+		document.getElementById("p1g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 500) {
+			clearInterval(P1interval);
+			gop1b();
+		}
+	}
+
+function gop1b() {
+	P1binterval = setInterval(P1bTimer, 30);
+}
+
+	function P1bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("p1").style.top = top1 + "px";
+		document.getElementById("p1").style.left = left1 + "px";
+		document.getElementById("p1g").style.top = top1s + "px";
+		document.getElementById("p1g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 400) {
+			clearInterval(P1binterval);
+			gop2();
+		}
+	}
+
+function gop2() {
+		top1 = 600;
+		left1 = 473;
+		top1s = 595;
+		left1s = 468;
+	P2interval = setInterval(P2Timer, 30);
+}
+
+	function P2Timer() {
+		document.getElementById("p2").style.display = "block";
+		document.getElementById("p2g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("p2").style.top = top1 + "px";
+		document.getElementById("p2").style.left = left1 + "px";
+		document.getElementById("p2g").style.top = top1s + "px";
+		document.getElementById("p2g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 500) {
+			clearInterval(P2interval);
+			gop2b();
+		}
+	}
+
+function gop2b() {
+	P2binterval = setInterval(P2bTimer, 30);
+}
+
+	function P2bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("p2").style.top = top1 + "px";
+		document.getElementById("p2").style.left = left1 + "px";
+		document.getElementById("p2g").style.top = top1s + "px";
+		document.getElementById("p2g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 400) {
+			clearInterval(P2binterval);
+			gop3();
+		}
+	}
+
+function gop3() {
+		top1 = 600;
+		left1 = 532;
+		top1s = 595;
+		left1s = 527;
+	P3interval = setInterval(P3Timer, 30);
+}
+
+	function P3Timer() {
+		document.getElementById("p3").style.display = "block";
+		document.getElementById("p3g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("p3").style.top = top1 + "px";
+		document.getElementById("p3").style.left = left1 + "px";
+		document.getElementById("p3g").style.top = top1s + "px";
+		document.getElementById("p3g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 500) {
+			clearInterval(P3interval);
+			gop3b();
+		}
+	}
+
+function gop3b() {
+	P3binterval = setInterval(P3bTimer, 30);
+}
+
+	function P3bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("p3").style.top = top1 + "px";
+		document.getElementById("p3").style.left = left1 + "px";
+		document.getElementById("p3g").style.top = top1s + "px";
+		document.getElementById("p3g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 400) {
+			clearInterval(P3binterval);
+			gop4();
+		}
+	}
+
+function gop4() {
+		top1 = 600;
+		left1 = 575;
+		top1s = 595;
+		left1s = 570;
+	P4interval = setInterval(P4Timer, 30);
+}
+
+	function P4Timer() {
+		document.getElementById("p4").style.display = "block";
+		document.getElementById("p4g").style.display = "block";
+		top1 = top1 - 10;
+		left1 = left1 - 20;
+		top1s = top1s - 10;
+		left1s = left1s + 20;
+		document.getElementById("p4").style.top = top1 + "px";
+		document.getElementById("p4").style.left = left1 + "px";
+		document.getElementById("p4g").style.top = top1s + "px";
+		document.getElementById("p4g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 500) {
+			clearInterval(P4interval);
+			gop4b();
+		}
+	}
+
+function gop4b() {
+	P4binterval = setInterval(P4bTimer, 30);
+}
+
+	function P4bTimer() {
+		top1 = top1 - 10;
+		left1 = left1 + 20;
+		top1s = top1s - 10;
+		left1s = left1s - 20;
+		document.getElementById("p4").style.top = top1 + "px";
+		document.getElementById("p4").style.left = left1 + "px";
+		document.getElementById("p4g").style.top = top1s + "px";
+		document.getElementById("p4g").style.left = left1s + "px";
+		document.getElementById("hp").innerHTML = top1;
+		document.getElementById("hpg").innerHTML = top1s;
+		document.getElementById("hpl").innerHTML = left1;
+		document.getElementById("hpgl").innerHTML = left1s;
+		if (top1 == 400) {
+			clearInterval(P4binterval);
+		}
+	}
+
+
+
+</script>
+
+</head>
+
+<body bgcolor="#C9DAF8" onload="fonum1e(0);">
+<button id="lgo" onclick="refreshPage();" style="display: none;">Refresh Page</button>
+<div id="savannah" class="welcome"><center>Savannah's Math (3 Times Table)</center></div>
+<br><br><br>
+
+<div id="hp" style="display: none;">0</div>
+<div id="hpl" style="display: none;">0</div>
+<div id="hpg" style="display: none;">0</div>
+<div id="hpgl" style="display: none;">0</div>
+
+<div id="f1" class="celebrate" style="display: none; left: 300; top: 300; position: absolute;">F</div>
+<div id="f1g" class="celebrateg" style="display: none; left: 295; top: 295; position: absolute;">F</div>
+<div id="f2" class="celebrate" style="display: none; left: 350; top: 300; position: absolute;">A</div>
+<div id="f2g" class="celebrateg" style="display: none; left: 345; top: 295; position: absolute;">A</div>
+<div id="f3" class="celebrate" style="display: none; left: 409; top: 300; position: absolute;">N</div>
+<div id="f3g" class="celebrateg" style="display: none; left: 404; top: 295; position: absolute;">N</div>
+<div id="f4" class="celebrate" style="display: none; left: 472; top: 300; position: absolute;">T</div>
+<div id="f4g" class="celebrateg" style="display: none; left: 467; top: 295; position: absolute;">T</div>
+<div id="f5" class="celebrate" style="display: none; left: 527; top: 300; position: absolute;">A</div>
+<div id="f5g" class="celebrateg" style="display: none; left: 522; top: 295; position: absolute;">A</div>
+<div id="f6" class="celebrate" style="display: none; left: 586; top: 300; position: absolute;">S</div>
+<div id="f6g" class="celebrateg" style="display: none; left: 581; top: 295; position: absolute;">S</div>
+<div id="f7" class="celebrate" style="display: none; left: 642; top: 300; position: absolute;">T</div>
+<div id="f7g" class="celebrateg" style="display: none; left: 637; top: 295; position: absolute;">T</div>
+<div id="f8" class="celebrate" style="display: none; left: 697; top: 300; position: absolute;">I</div>
+<div id="f8g" class="celebrateg" style="display: none; left: 692; top: 295; position: absolute;">I</div>
+<div id="f9" class="celebrate" style="display: none; left: 735; top: 300; position: absolute;">C</div>
+<div id="f9g" class="celebrateg" style="display: none; left: 730; top: 295; position: absolute;">C</div>
+
+
+<div id="x1" class="celebrate" style="display: none; left: 300; top: 300; position: absolute;">E</div>
+<div id="x1g" class="celebrateg" style="display: none; left: 295; top: 295; position: absolute;">E</div>
+<div id="x2" class="celebrate" style="display: none; left: 350; top: 300; position: absolute;">X</div>
+<div id="x2g" class="celebrateg" style="display: none; left: 345; top: 295; position: absolute;">X</div>
+<div id="x3" class="celebrate" style="display: none; left: 409; top: 300; position: absolute;">C</div>
+<div id="x3g" class="celebrateg" style="display: none; left: 404; top: 295; position: absolute;">C</div>
+<div id="x4" class="celebrate" style="display: none; left: 472; top: 300; position: absolute;">E</div>
+<div id="x4g" class="celebrateg" style="display: none; left: 467; top: 295; position: absolute;">E</div>
+<div id="x5" class="celebrate" style="display: none; left: 527; top: 300; position: absolute;">L</div>
+<div id="x5g" class="celebrateg" style="display: none; left: 522; top: 295; position: absolute;">L</div>
+<div id="x6" class="celebrate" style="display: none; left: 586; top: 300; position: absolute;">L</div>
+<div id="x6g" class="celebrateg" style="display: none; left: 581; top: 295; position: absolute;">L</div>
+<div id="x7" class="celebrate" style="display: none; left: 642; top: 300; position: absolute;">E</div>
+<div id="x7g" class="celebrateg" style="display: none; left: 637; top: 295; position: absolute;">E</div>
+<div id="x8" class="celebrate" style="display: none; left: 697; top: 300; position: absolute;">N</div>
+<div id="x8g" class="celebrateg" style="display: none; left: 692; top: 295; position: absolute;">N</div>
+<div id="x9" class="celebrate" style="display: none; left: 735; top: 300; position: absolute;">T</div>
+<div id="x9g" class="celebrateg" style="display: none; left: 730; top: 295; position: absolute;">T</div>
+
+
+<div id="g1" class="celebrate" style="display: none; left: 250; top: 300; position: absolute;">G</div>
+<div id="g1g" class="celebrateg" style="display: none; left: 245; top: 295; position: absolute;">G</div>
+<div id="g2" class="celebrate" style="display: none; left: 305; top: 300; position: absolute;">O</div>
+<div id="g2g" class="celebrateg" style="display: none; left: 300; top: 295; position: absolute;">O</div>
+<div id="g3" class="celebrate" style="display: none; left: 368; top: 300; position: absolute;">O</div>
+<div id="g3g" class="celebrateg" style="display: none; left: 363; top: 295; position: absolute;">O</div>
+<div id="g4" class="celebrate" style="display: none; left: 431; top: 300; position: absolute;">D</div>
+<div id="g4g" class="celebrateg" style="display: none; left: 426; top: 295; position: absolute;">D</div>
+
+<div id="g5" class="celebrate" style="display: none; left: 539; top: 300; position: absolute;">G</div>
+<div id="g5g" class="celebrateg" style="display: none; left: 534; top: 295; position: absolute;">G</div>
+<div id="g6" class="celebrate" style="display: none; left: 594; top: 300; position: absolute;">O</div>
+<div id="g6g" class="celebrateg" style="display: none; left: 589; top: 295; position: absolute;">O</div>
+<div id="g7" class="celebrate" style="display: none; left: 657; top: 300; position: absolute;">I</div>
+<div id="g7g" class="celebrateg" style="display: none; left: 652; top: 295; position: absolute;">I</div>
+<div id="g8" class="celebrate" style="display: none; left: 702; top: 300; position: absolute;">N</div>
+<div id="g8g" class="celebrateg" style="display: none; left: 697; top: 295; position: absolute;">N</div>
+<div id="g9" class="celebrate" style="display: none; left: 765; top: 300; position: absolute;">G</div>
+<div id="g9g" class="celebrateg" style="display: none; left: 760; top: 295; position: absolute;">G</div>
+
+
+<div id="a1" class="celebrate" style="display: none; left: 250; top: 300; position: absolute;">W</div>
+<div id="a1g" class="celebrateg" style="display: none; left: 245; top: 295; position: absolute;">W</div>
+<div id="a2" class="celebrate" style="display: none; left: 305; top: 300; position: absolute;">A</div>
+<div id="a2g" class="celebrateg" style="display: none; left: 300; top: 295; position: absolute;">A</div>
+<div id="a3" class="celebrate" style="display: none; left: 368; top: 300; position: absolute;">Y</div>
+<div id="a3g" class="celebrateg" style="display: none; left: 363; top: 295; position: absolute;">Y</div>
+
+<div id="a4" class="celebrate" style="display: none; left: 431; top: 300; position: absolute;">T</div>
+<div id="a4g" class="celebrateg" style="display: none; left: 426; top: 295; position: absolute;">T</div>
+<div id="a5" class="celebrate" style="display: none; left: 539; top: 300; position: absolute;">O</div>
+<div id="a5g" class="celebrateg" style="display: none; left: 534; top: 295; position: absolute;">O</div>
+
+<div id="a6" class="celebrate" style="display: none; left: 594; top: 300; position: absolute;">G</div>
+<div id="a6g" class="celebrateg" style="display: none; left: 589; top: 295; position: absolute;">G</div>
+<div id="a7" class="celebrate" style="display: none; left: 657; top: 300; position: absolute;">O</div>
+<div id="a7g" class="celebrateg" style="display: none; left: 652; top: 295; position: absolute;">O</div>
+
+
+<div id="s1" class="celebrate" style="display: none; left: 400; top: 400; position: absolute;">S</div>
+<div id="s1g" class="celebrateg" style="display: none; left: 395; top: 395; position: absolute;">S</div>
+<div id="s2" class="celebrate" style="display: none; left: 456; top: 400; position: absolute;">A</div>
+<div id="s2g" class="celebrateg" style="display: none; left: 451; top: 395; position: absolute;">A</div>
+<div id="s3" class="celebrate" style="display: none; left: 515; top: 400; position: absolute;">V</div>
+<div id="s3g" class="celebrateg" style="display: none; left: 510; top: 395; position: absolute;">V</div>
+<div id="s4" class="celebrate" style="display: none; left: 568; top: 400; position: absolute;">A</div>
+<div id="s4g" class="celebrateg" style="display: none; left: 563; top: 395; position: absolute;">A</div>
+<div id="s5" class="celebrate" style="display: none; left: 627; top: 400; position: absolute;">N</div>
+<div id="s5g" class="celebrateg" style="display: none; left: 622; top: 395; position: absolute;">N</div>
+<div id="s6" class="celebrate" style="display: none; left: 690; top: 400; position: absolute;">N</div>
+<div id="s6g" class="celebrateg" style="display: none; left: 685; top: 395; position: absolute;">N</div>
+<div id="s7" class="celebrate" style="display: none; left: 753; top: 400; position: absolute;">A</div>
+<div id="s7g" class="celebrateg" style="display: none; left: 748; top: 395; position: absolute;">A</div>
+<div id="s8" class="celebrate" style="display: none; left: 812; top: 400; position: absolute;">H</div>
+<div id="s8g" class="celebrateg" style="display: none; left: 807; top: 395; position: absolute;">H</div>
+
+<div id="s9" class="celebrate" style="display: none; left: 872; top: 400; position: absolute;">'</div>
+<div id="s9g" class="celebrateg" style="display: none; left: 867; top: 395; position: absolute;">'</div>
+<div id="s10" class="celebrate" style="display: none; left: 892; top: 400; position: absolute;">S</div>
+<div id="s10g" class="celebrateg" style="display: none; left: 887; top: 395; position: absolute;">S</div>
+
+
+<div id="v1" class="celebrate" style="display: none; left: 380; top: 500; position: absolute;">L</div>
+<div id="v1g" class="celebrateg" style="display: none; left: 375; top: 495; position: absolute;">L</div>
+<div id="v2" class="celebrate" style="display: none; left: 426; top: 500; position: absolute;">O</div>
+<div id="v2g" class="celebrateg" style="display: none; left: 421; top: 495; position: absolute;">O</div>
+<div id="v3" class="celebrate" style="display: none; left: 489; top: 500; position: absolute;">V</div>
+<div id="v3g" class="celebrateg" style="display: none; left: 484; top: 495; position: absolute;">V</div>
+<div id="v4" class="celebrate" style="display: none; left: 495; top: 500; position: absolute;">E</div>
+<div id="v4g" class="celebrateg" style="display: none; left: 490; top: 495; position: absolute;">E</div>
+<div id="v5" class="celebrate" style="display: none; left: 642; top: 500; position: absolute;">Y</div>
+<div id="v5g" class="celebrateg" style="display: none; left: 637; top: 495; position: absolute;">Y</div>
+<div id="v6" class="celebrate" style="display: none; left: 694; top: 500; position: absolute;">O</div>
+<div id="v6g" class="celebrateg" style="display: none; left: 689; top: 495; position: absolute;">O</div>
+<div id="v7" class="celebrate" style="display: none; left: 757; top: 500; position: absolute;">U</div>
+<div id="v7g" class="celebrateg" style="display: none; left: 752; top: 495; position: absolute;">U</div>
+
+
+<div id="p1" class="celebrate" style="display: none; left: 480; top: 600; position: absolute;">P</div>
+<div id="p1g" class="celebrateg" style="display: none; left: 475; top: 595; position: absolute;">P</div>
+<div id="p2" class="celebrate" style="display: none; left: 523; top: 600; position: absolute;">A</div>
+<div id="p2g" class="celebrateg" style="display: none; left: 518; top: 595; position: absolute;">A</div>
+<div id="p3" class="celebrate" style="display: none; left: 582; top: 600; position: absolute;">P</div>
+<div id="p3g" class="celebrateg" style="display: none; left: 577; top: 595; position: absolute;">P</div>
+<div id="p4" class="celebrate" style="display: none; left: 625; top: 600; position: absolute;">A</div>
+<div id="p4g" class="celebrateg" style="display: none; left: 620; top: 595; position: absolute;">A</div>
+
+
+<div id="everything" style="display: block;">
+<center>
+	<h1 id="num1">Question Number 1</h1><br><br>
+	<!--<div id="info" class="sp">There are 3 feet in a Yard.</div><br><br>-->
+	<div id="prob6" style="display: block;"><span class="sp" id="num1a">10</span>&nbsp<span class="sp">X 3</span> &nbsp;<span class="sp">is Equal to</span>&nbsp;&nbsp;<input id="num1b" class="answer" tabindex="6" size="2">&nbsp;&nbsp;<span class="sp">Feet</span></div>
+	<br><button id="button1" onclick="gonext2();" tabindex="7">Check Question</button><br>
+	<h5 id="correct1" style="display: none;">**** CORRECT ****<br></h5>
+	<button id="buttonnx" onclick="gonext2a();" style="display: none;" tabindex="8">Next Question</button>
+	<h6 id="incorrect1" style="display: none;"><span id="wrong"></span></h6>
+	
+	
+	
+	
+	<div id="questno" style="display: none;">0</div>
+	<button id="gogo" onclick="gowithit();" style="display: none;">gogo</button>
+</center>
+</div>
+
+</body>
+</html>
